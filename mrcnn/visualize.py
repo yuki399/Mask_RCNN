@@ -148,6 +148,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
 
         # Mask
         mask = masks[:, :, i]
+        print(colors[i])
         if show_mask:
             #masked_image = apply_mask(masked_image, mask, color)
             masked_image = apply_mask(masked_image, masks[1,0,0],color)
