@@ -60,7 +60,7 @@ def random_colors(N, bright=True):
     """
     Generate random colors.
     To get visually distinct colors, generate them in HSV space then
-    convert to RGB.
+ to RGB.
     """
     brightness = 1.0 if bright else 0.7
     hsv = [(i / N, 1, brightness) for i in range(N)]
@@ -149,8 +149,12 @@ def display_instances(image, boxes, masks, class_ids, class_names,
         # Mask
         mask = masks[:, :, i]
         if show_mask:
+        #    masked_image = apply_mask(masked_image, masks[1,0,0],1)
             masked_image = apply_mask(masked_image, mask, color)
-
+        #    if class_id == 2:
+        #        masked_image = apply_mask(masked_image, masks[:,:,1],color)
+        #    else:
+        #        masked_image = apply_mask(masked_image, masks[:,:,1],color)
         # Mask Polygon
         # Pad to ensure proper polygons for masks that touch image edges.
         padded_mask = np.zeros(
