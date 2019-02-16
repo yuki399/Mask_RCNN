@@ -148,9 +148,10 @@ def display_instances(image, boxes, masks, class_ids, class_names,
 
         # Mask
         mask = masks[:, :, i]
+        print(color)
         if show_mask:
-        #    masked_image = apply_mask(masked_image, masks[1,0,0],1)
-            masked_image = apply_mask(masked_image, mask, color)
+            masked_image = apply_mask(masked_image, masks[1,0,0],1)
+        #    masked_image = apply_mask(masked_image, mask, color)
         #    if class_id == 2:
         #        masked_image = apply_mask(masked_image, masks[:,:,1],color)
         #    else:
