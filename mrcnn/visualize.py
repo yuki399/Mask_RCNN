@@ -123,6 +123,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
     masked_image = image.astype(np.uint32).copy()
     for i in range(N):
         color = colors[i]
+        print(color)
 
         # Bounding box
         if not np.any(boxes[i]):
@@ -148,14 +149,13 @@ def display_instances(image, boxes, masks, class_ids, class_names,
 
         # Mask
         mask = masks[:, :, i]
-        print(color)
         if show_mask:
         #    masked_image = apply_mask(masked_image, masks[1,0,0],1)
         #    masked_image = apply_mask(masked_image, mask, color)
             if class_id == 2:
-                masked_image = apply_mask(masked_image, masks[:,:,1],(0.5, 1.0, 0.0))
+                masked_image = apply_mask(masked_image, masks[:,:,1],color)
             else:
-                masked_image = apply_mask(masked_image, masks[:,:,1],(0.5, 1.0, 0.0))
+                masked_image = apply_mask(masked_image, masks[:,:,1],color)
         # Mask Polygon
         # Pad to ensure proper polygons for masks that touch image edges.
         padded_mask = np.zeros(
