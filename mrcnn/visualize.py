@@ -149,13 +149,13 @@ def display_instances(image, boxes, masks, class_ids, class_names,
         # Mask
         mask = masks[:, :, i]
         print(class_id)
-        #if show_mask:
+        if show_mask:
         #    masked_image = apply_mask(masked_image, masks[1,0,0],1)
         #    masked_image = apply_mask(masked_image, mask, color)
-        if class_id == 2:
-            masked_image = apply_mask(masked_image, masks[:,:,1],1)
-        else:
-            masked_image = apply_mask(masked_image, masks[:,:,1],1)
+            if class_id == 2:
+                masked_image = apply_mask(masked_image, masks[:,:,1],1)
+            else:
+                masked_image = apply_mask(masked_image, masks[:,:,1],1)
         # Mask Polygon
         # Pad to ensure proper polygons for masks that touch image edges.
         padded_mask = np.zeros(
