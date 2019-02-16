@@ -151,6 +151,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
         if show_mask:
         #    masked_image = apply_mask(masked_image, masks[:,:,i],color)
         #    masked_image = apply_mask(masked_image, mask, color)
+        #1が人と設定されている
             if class_id == 1:
                 masked_image = apply_mask(masked_image, mask,[0.0,0.0,0.0])
             else:
