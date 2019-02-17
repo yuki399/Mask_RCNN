@@ -153,7 +153,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
         #    masked_image = apply_mask(masked_image, mask, color)
         #1が人と設定されている
             if class_id == 1:
-                masked_image = apply_mask(masked_image, mask,[0.0,0.0,0.0],alpha=0.1)
+                masked_image = apply_mask(masked_image, mask,[0.0,0.0,0.0],alpha=0.8)
             else:
                 masked_image = apply_mask(masked_image, mask,color)
         # Mask Polygon
